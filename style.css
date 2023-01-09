@@ -1,11 +1,12 @@
-*{
-    margin: 0;
-    box-sizing: border-box;
+* , ::after, ::before{
+  box-sizing: inherit;
+  margin: 0;
+  padding:0;
 }
 
 html{
-    font-size: 12px;
-    
+    font-size: 15px;  
+    box-sizing: border-box;
 }
 
 :root{
@@ -16,45 +17,75 @@ html{
     --Very-light-gray: hsl(0, 0%, 95%);
    
 }
+@media screen and (min-width: 560px) {
+    .columns {
+       display: flex;
+       flex-direction: row !important;
+       align-items: center;
+       justify-content: center;
+       height: 90vh;
+        }   
+    .attribution{
+    margin: -60px !important;
+    }
+    .col1{
+        border-radius: 6px 0 0 6px !important;
+    }
+    .col3{
+        border-radius: 0 6px 6px 0 !important;
+    }
+   
+}
 
 body{
     background-color: var(--Very-light-gray);
-    color:var(--Very-light-gray);
-    font-family: 'Lexend Deca', sans-serif;
-    
+    color:var(--Transparent-white);
+    font-family: 'Lexend Deca', sans-serif;  
+    font-weight: 400; 
+
 }
 
 .col1{
-    background-color: var(--Bright-orange);
-    padding:35px 50px;
+    background-color: var(--Bright-orange);  
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px; 
 }
 
 .col2{
     background-color: var(--Dark-cyan);
-    padding:35px 50px;
 }
 
 .col3{
-    background-color: var(--Very-dark-cyan);
-    padding:35px 40px;
-    
+    background-color: var(--Very-dark-cyan);   
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.col1, .col2, .col3{
+    max-width: 280px;
+    padding:35px 30px;
+   
 }
 
 .columns{
-    max-width:300px;
-    margin: 0 auto;
-    line-height: 2rem;
     
-    
+    margin: 50px auto;
+    line-height: 2rem; 
+    flex-direction: column;
+    display:flex;
+    align-items: center;   
 }
 
 button{
     border-radius: 25px;
     padding: 10px 30px;
-    border:none;
-    margin-top: 60px;
-    
-    
+    border: solid 3px var(--Very-light-gray);
+    margin-top: 60px;   
+}
+button:hover{
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--Very-light-gray) !important;
 }
 
 .col1 button{
@@ -66,13 +97,27 @@ button{
 }
 
 .col3 button{
-    color:var(--Very-dark-cyan);
+    color:var(--Very-dark-cyan);   
 }
 
 h1{
-    padding: 15px 0;
+    padding: 35px 0;
     font-family: "Big Shoulders Display", cursive;
-    font-weight: 500;
+    font-weight: 700;
     text-transform: uppercase;
+    font-size: 3rem;
+    color: var(--Very-light-gray);
+}
+.paragraph{
+    min-height: 200px;
 }
 
+.attribution{
+    margin-top: 20px;
+    text-align: center;
+    
+}
+
+.attribution p{
+    color: black;
+}
